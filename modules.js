@@ -8,3 +8,8 @@ const { nme, ag } = require("./data");
 console.log(nme, ag);
 const os = require("os");
 console.log(os.homedir());
+
+
+
+
+

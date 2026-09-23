@@ -9,3 +9,7 @@ const writeStream = fs.createWriteStream("./docs/copylrn.txt");
 // });
 // above or below anyone can use
 readStream.pipe(writeStream)
+
+
+
+
