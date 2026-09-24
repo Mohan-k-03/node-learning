@@ -1,7 +1,7 @@
 const http = require("http");
 
 const fs = require("fs");
-
+const _ = require("lodash");
 const server = http.createServer((req, res) => {
   console.log("request made");
   console.log(req.url);
@@ -50,4 +50,6 @@ const server = http.createServer((req, res) => {
 
 server.listen(3000, "localhost", () => {
   console.log("server is lisenting");
-});
+console.log(_.random(14,44
+  
+))});
