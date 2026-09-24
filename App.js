@@ -20,5 +20,8 @@ app.get('/joinus',(req,res)=>{
 })
 
 app.use((req,res) => {
-  res.sendFile("./docs/Error_404.svg", { root: __dirname });
+  res.status(404).sendFile("./docs/Error_404.svg", { root: __dirname });
 });
+
+
+            
