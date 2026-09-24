@@ -9,22 +9,27 @@ const server = http.createServer((req, res) => {
   res.setHeader("content-type", "text/html");
   let path = "./docs/";
 
-  if (req.url == "/") {
-    path += "index.html";
-    res.statusCode = 200;
-  } else if (req.url == "/home") {
-    res.statusCode = 302;
-    res.setHeader("Location", "/");
-    res.end();
-  } else if (req.url == "/about") {
-    path += "about.html";
-    res.statusCode = 200;
-  } else if (req.url == "/join") {
-    path += "join.html";
-    res.statusCode = 200;
-  } else {
-    path += "notfound.html";
-    res.statusCode = 404;
+  switch (req.url) {
+    case "/":
+      path += "index.html";
+      res.statusCode = 200;
+      break;
+    case "/home":
+      res.statusCode = 302;
+      res.setHeader("Location", "/");
+      res.end();
+      break;
+    case "/about":
+      path += "about.html";
+      res.statusCode = 200;
+      break;
+    case "/join":
+      path += "join.html";
+      res.statusCode = 200;
+      break;
+    default:
+      path += "notfound.html";
+      res.statusCode = 404;
   }
 
   if (fs.existsSync(path)) {
@@ -50,6 +55,5 @@ const server = http.createServer((req, res) => {
 
 server.listen(3000, "localhost", () => {
   console.log("server is lisenting");
-console.log(_.random(14,44
-  
-))});
+  console.log(_.random(14, 44));
+});
